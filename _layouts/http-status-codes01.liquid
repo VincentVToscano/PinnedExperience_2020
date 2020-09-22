@@ -1,0 +1,30 @@
+---
+sitemap: ""
+---
+<!DOCTYPE html>
+<html lang="en" id="{{ site.name | downcase }}-html">
+    <head>
+        {% include head01.liquid collection='http-status-codes' %}
+    </head>
+    <body>
+        {% include navigation/navGlobal.liquid %}
+        <main class="mainContent">
+
+            <div class="http-status-codes http-status-codes--style01">
+
+                <header class="http-status-codes__header">
+
+                    <h1 class="http-status-codes__h1">{{ page.headline }}</h1>
+                    <h2 class="http-status-codes__h2">{{ page.subheadline }}</h2>
+
+                </header>
+
+                {{ content }}
+                <a href="{{ env }}" class="http-status-codes_button" title="Visit Home">Visit Our Home</a>
+
+            </div>
+        </main>
+        {% include footer01.liquid %}
+
+    </body>
+</html>

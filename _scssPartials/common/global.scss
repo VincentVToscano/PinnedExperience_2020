@@ -1,0 +1,253 @@
+// ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+// ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+// ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+// ▒ Place global/project-level styles here
+// ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+
+html {
+  height: 100%;
+  background: $color-bkgd;
+}
+
+body {
+  @include flex-container-display();
+  @include flex-container-flow(nowrap column);
+  height: 100vh; /* Avoid the IE 10-11 min-height issue. */
+  overflow-x: unset;
+}
+
+//  Text selection
+// ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+::-moz-selection {
+  background-color: $color-rose-1;
+  color: $color-gray-1;
+}
+
+::selection {
+  background-color: $color-rose-1;
+  color: $color-gray-1;
+}
+
+//  Define HTML headings – <h1> to <h6>
+// ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+h1 {
+  font-size: 45px;
+}
+
+h2 {
+  font-size: 27px;
+}
+
+h3 {
+  font-size: 25px;
+}
+
+h4 {
+  font-size: 23px;
+}
+
+h5 {
+  font-size: 22px;
+}
+
+h6 {
+  font-size: 21px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: $color-gray-1;
+}
+
+//  Define <em> (emphasized) & <strong> (important or strongly emphasized) tags
+// ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+em {
+  padding: 0 3px 0 3px;
+  background: $color-gray-1;
+  font-style: italic;
+  color: $color-bkgd;
+}
+
+strong {
+  font-weight: bold;
+  color: $color-bkgd;
+}
+
+
+//  mainContent --- Gets applied to <main> element
+// ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+.mainContent {
+  z-index: 1;
+  min-height: 86vh;
+  //padding: 100px $global-padding-size-1 $global-padding-size-1 $global-padding-size-1;
+  @include flex(1 0 auto); /* Prevent Chrome, Opera, and Safari from letting these items shrink to smaller than their content's default minimum size. */
+
+  //padding: $global-nav-height-mobile + 32px; // removing for fulls screen demo
+  overflow: hidden;
+
+  @include mobile {
+	//padding: $global-nav-height-mobile + 16px; // removing for fulls screen demo
+  }
+}
+
+//  Global <footer> with <time>
+// ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+.footer {
+  position: relative;
+  display: block;
+  width: 100%;
+  min-height: 456px;
+  padding: $global-padding-size-2 $global-padding-size-1 $global-padding-size-2 $global-padding-size-1;
+  background: $color-bkgd;
+  text-align: center;
+  @include flex(1);
+
+  time {
+	font-size: 12px;
+  }
+
+}
+
+@include animation-keyframes(ani-to-the-top-btn) {
+  from { background-position: 0 0;}
+  to { background-position: 0 100%;}
+}
+
+
+.footer__p{
+  margin: 0 0 15px 0;
+}
+
+.footer__button {
+  position: relative;
+  display:inline-block;
+  width:auto;
+  height:auto;
+  margin: 0;
+  padding:0 20px;
+  border:0;
+  outline:none;
+  line-height:40px;
+  overflow-x:hidden;
+  cursor:pointer;
+  text-align:center;
+  white-space:nowrap;
+  text-decoration:none;
+  text-transform:uppercase;
+  @include user-select();
+  text-overflow:ellipsis;
+
+  @include setPseudoClasses(rgba(0,0,0,0), $color-gray-1, $color-gray-2, $color-bkgd);
+
+  &.footer__button--full-width {
+    display:block;
+  }
+
+  &.footer__button--copyright{
+    line-height:inherit;
+    padding: unset;
+    height: unset;
+    text-transform:unset;
+    overflow: unset;
+    @include setPseudoClasses(rgba(0,0,0,0), $color-gray-3, $color-gray-2, $color-bkgd);
+  }
+}
+
+.footer__to-top-button{
+  z-index: 1000;
+  position: absolute;
+  display: block;
+  top: -($button-take-me-to-the-top-radius / 2);
+  right: ($button-take-me-to-the-top-radius / 2);
+  @include borderRadius(50%);
+  width: $button-take-me-to-the-top-radius;
+  height: $button-take-me-to-the-top-radius;
+  background:url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDIzLjEuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCAyNCAyNCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMjQgMjQ7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPHN0eWxlIHR5cGU9InRleHQvY3NzIj4KCS5zdDB7ZmlsbDpub25lO3N0cm9rZTojRkZGRkZGO3N0cm9rZS13aWR0aDoyO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDt9Cjwvc3R5bGU+CjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik03LjUsOC41TDEyLDQgTTEyLDRsNC41LDQuNSBNMTIsNHYxNiIvPgo8L3N2Zz4K') $color-gray-2 0 0 repeat;
+  background-size: 100% 100%;
+
+
+    &:link, &:visited, &.disabled, &[disabled] {
+      cursor: n-resize;
+    }
+
+    &:focus, &:hover, &:active {
+      color: $color-bkgd;
+      @include animation(0, 1.4s, ani-to-the-top-btn, normal, none, infinite, linear);
+      background-size: 100% 345%;
+      cursor: n-resize;
+    }
+}
+
+
+//  Apply to <img> elements to scale proportionately
+// ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+.img--scaleProportionately {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+//  CTA’s, Buttons, Anchors/Hyperlinks
+// ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+.button {
+  position: relative;
+  display:inline-block;
+  width:auto;
+  height:auto;
+  margin: 0;
+  padding:0 20px;
+  border:0;
+  outline:none;
+  background:black;
+  line-height:40px;
+  color:white;
+  overflow-x:hidden;
+  cursor:pointer;
+  text-align:center;
+  white-space:nowrap;
+  text-decoration:none;
+  text-transform:uppercase;
+  @include user-select();
+  text-overflow:ellipsis;
+  
+  &.button--full-width {
+    display:block;
+  }
+
+  &:link,
+  &:visited {
+       background: black;
+       color: white;
+  }
+
+  &:active,
+  &:focus,
+  &:hover {
+       background: grey;
+       color: black;
+  }
+}
+
+//  Lists and list items
+// ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+ul {
+  width: 100%;
+  list-style-type: none;
+  text-align: left;
+
+  li {
+	width: 100%;
+	height: $global-nav-height-mobile;
+  }
+}
+
+//  Demo purposes
+// ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+.demo__marker {
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 50vh;
+  border-bottom: 1px solid #6b6b6b;
+}

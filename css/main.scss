@@ -1,0 +1,22 @@
+---
+---
+{%- include varsGlobal.liquid -%}
+//  Dynamic variables that are influenced by Jekyll configuration and data files
+// ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+$fontDir: "{{env}}{{site.meta.urlFonts}}";
+
+//  Common, global and tags.
+// ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+@import '../_scssPartials/common/reset';
+@import '../_scssPartials/common/mixins';
+@import '../_scssPartials/common/global_vars';
+@import '../_scssPartials/common/fonts';
+@import '../_scssPartials/common/global';
+@import '../_scssPartials/common/grid';
+
+//  Project-specific CSS/SCSS goes below here
+// ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+@import '../_scssPartials/navigation/navGlobal';
+@import '../_scssPartials/layouts/home01';
+@import '../_scssPartials/layouts/http-status-codes';
+@import '../_scssPartials/banner/banner01';

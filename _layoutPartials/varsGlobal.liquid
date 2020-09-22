@@ -1,0 +1,13 @@
+{%- if jekyll.environment == 'dev' -%}
+    {%- assign env = {{site.urlDev}} -%}
+    {%- elsif jekyll.environment == 'stage' -%}
+    {%- assign env = {{site.urlStage}} -%}
+{%- else -%}
+    {%- assign env = {{site.url}} -%}
+{%- endif -%}
+	{%- capture var_canonical -%}{{ env }}{{ page.url | append:' ' | replace:'/ ','' }}{%- endcapture -%}
+	{%- capture var_timeNow -%}{{ 'now' | date: "%Y" }}{%- endcapture -%}
+	{%- assign min = 0 -%}
+	{%- assign max = 999 -%}
+	{%- assign diff = max | minus: min -%}
+	{%- assign randomNumber = "now" | date: "%N" | modulo: diff | plus: min -%}

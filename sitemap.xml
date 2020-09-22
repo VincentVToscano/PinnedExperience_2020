@@ -1,0 +1,45 @@
+---
+layout: null
+sitemap:
+exclude: yes
+---
+{% include varsGlobal.liquid %}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.google.com/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+	{% comment %} Home {% endcomment %}
+
+	<url>
+		<loc>{{ env }}</loc>
+		<lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+		<changefreq>daily</changefreq>
+		<priority>1.0</priority>
+	</url>
+
+	{% comment %} Add Pages below {% endcomment %}
+
+	{% for page in site.pages %}
+
+	{% if page.sitemap != null and page.sitemap != empty %}
+	{% if page.url contains "feed.xml" or page.sitemap.exclude %}
+	{% else %}
+
+	<url>
+		<loc>{{env}}{{ page.url }}</loc>
+		<lastmod>{{ page.sitemap.lastmod | date_to_xmlschema }}</lastmod>
+		<changefreq>{{ page.sitemap.changefreq }}</changefreq>
+		<priority>{{ page.sitemap.priority }}</priority>
+	</url>
+	{% endif %}
+	{% endif %}
+	{% endfor %}
+
+    {% comment %} Add Collections below {% endcomment %}
+
+    {% for page in site.legal %}
+    <url>
+        <loc>{{env}}{{page.url}}</loc>
+        <lastmod>{{page.sitemap.lastmod | date_to_xmlschema }}</lastmod>
+        <changefreq>{{page.sitemap.changefreq}}</changefreq>
+        <priority>{{page.sitemap.priority}}</priority>
+    </url>
+    {% endfor %}
+</urlset>

@@ -1,0 +1,41 @@
+// ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+// ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+// ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+// ▒ http-status-codes
+// ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+
+
+.http-status-codes {
+  p:last-of-type {
+    margin: 0 0 15px 0;
+  }
+}
+
+
+.http-status-codes_button{
+  position: relative;
+  display:inline-block;
+  left: 50%;
+  min-width: 400px;
+  height:auto;
+  margin:24px auto;
+  padding:0 20px;
+  border:0;
+  outline:none;
+  line-height:$global-nav-height-desktop;
+  overflow-x:hidden;
+  cursor:pointer;
+  text-align:center;
+  white-space:nowrap;
+  text-decoration:none;
+  @include user-select();
+  text-transform:uppercase;
+  text-overflow:ellipsis;
+  @include translate3d(-50%);
+  @include borderRadius(6px);
+  &.http-status-codes_button--full-width {
+    display:block;
+  }
+
+  @include setPseudoClasses($color-gray-2, $color-bkgd, $color-bkgd, $color-bkgd);
+}

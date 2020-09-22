@@ -1,0 +1,94 @@
+{%- include varsGlobal.liquid -%}
+	{%- if page.collection -%}
+		{%- assign var_collection = page.collection | capitalize -%}
+	{%- else -%}
+		{%- capture var_collection -%}
+			{{ include.collection | capitalize }}
+		{%- endcapture -%}
+	{%- endif -%}
+	{%- capture var_title -%}{%- if page.meta.title -%}{{ page.meta.title }} | {{ var_collection }} | {{ site.meta.title }}{%- elsif
+		site.meta.title -%}{{ site.meta.title }}{%- endif -%}{%- endcapture -%}
+	<meta charset="UTF-8">
+	{%- comment -%} Global metadata {% endcomment %}
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no">
+	<meta name="copyright" content="&copy;{{ var_timeNow }} {{ site.meta.author }}">
+	<meta name="robots" content="{{ site.meta.robots }}">
+	<meta name="theme-color" content="{{ site.meta.theme_color }}">
+	<meta name="author" content="{{ site.meta.author }}">
+	<meta name="application-name" content="{{ site.meta.app_name }}">
+	{% if page.meta.keywords %}
+	<meta name="description" content="{{ page.meta.description }}">
+	<meta name="keywords" content="{{ page.meta.keywords }}">
+		{%- elsif site.meta.keywords -%}
+	<meta name="description" content="{{ site.meta.description }}">
+	<meta name="keywords" content="{{ site.meta.keywords }}">
+	{%- endif -%}
+	{%- comment -%} OpenGraph {% endcomment %}
+	<meta property="og:id" content="{{ site.meta.og.id }}">
+	<meta property="og:locale" content="{{ site.meta.og.locale }}">
+	<meta property="og:url" content="{{ var_canonical }}">
+	<meta property="og:title" content="{%- if page.meta.og.title -%}{{ page.meta.og.title }}{%- else -%}{{ site.meta.og.title }}{%- endif -%}">
+	<meta property="og:description" content="{%- if page.meta.og.description -%}{{page.meta.og.description }}{%- else -%}{{ site.meta.og.description }}{%- endif -%}">
+	<meta property="og:site_name" content="{%- if page.meta.og.site_name -%}{{ page.meta.og.site_name }}{%- else -%}{{ site.meta.og.site_name }}{%- endif -%}">
+	<meta property="og:type" content="{%- if page.meta.og.type -%}{{ page.meta.og.type }}{%- else -%}{{ site.meta.og.type }}{%- endif -%}">
+	<meta property="og:image" content="{{ env }}{%- if page.meta.og.image -%}{{ page.meta.og.image }}{%- else -%}{{ site.meta.og.image }}{%- endif -%}?v={{ randomNumber }}">
+	<meta property="og:image:type" content="{%- if page.meta.og.image_type -%}{{ page.meta.og.image_type }}{%- else -%}{{ site.meta.og.image_type }}{%- endif -%}">
+	<meta property="og:image:width" content="{%- if page.meta.og.image_width -%}{{ page.meta.og.image_width }}{%- else -%}{{ site.meta.og.image_width }}{%- endif -%}">
+	<meta property="og:image:height" content="{%- if page.meta.og.image_height -%}{{ page.meta.og.image_height }}{%- else -%}{{ site.meta.og.image_height }}{%- endif -%}">
+	<meta property="og:image:alt" content="{%- if page.meta.og.image_alt -%}{{ page.meta.og.image_alt }}{%- else -%}{{ site.meta.og.image_alt }}{%- endif -%}" />
+	<meta property="og:updated_time" content="{{ site.time | date_to_xmlschema }}">
+	{%- comment -%} Twitter {% endcomment %}
+	<meta name="twitter:card" content="{{ site.meta.twitter.card }}">
+	<meta name="twitter:site" content="{{ site.meta.twitter.site }}">
+	<meta name="twitter:url" content="{{ var_canonical }}">
+	<meta name="twitter:creator" content="{{ site.meta.twitter.creator }}">
+	{% if page.meta.twitter.creator %}
+	<meta name="twitter:title" content="{{ page.meta.twitter.title }}">
+	<meta name="twitter:description" content="{{ page.meta.twitter.description }}">
+	<meta name="twitter:image" content="{{ env }}{{ page.meta.twitter.image }}?v={{ randomNumber }}">
+	<meta name="twitter:image:alt" content="{{ page.meta.twitter.image_alt }}">
+		{%- elsif site.meta.twitter.creator -%}
+	<meta name="twitter:title" content="{{ site.meta.twitter.title }}">
+	<meta name="twitter:description" content="{{ site.meta.twitter.description }}">
+	<meta name="twitter:image" content="{{ env }}{{ site.meta.twitter.image }}?v={{ randomNumber }}">
+	<meta name="twitter:image:alt" content="{{ site.meta.twitter.image_alt }}">
+	{%- endif -%}
+	{%- comment -%} Apple {%- endcomment -%}
+	{%- if page.meta.apple.apple_bar_style -%}
+	<meta name="apple-mobile-web-app-capable" content="{{ page.meta.apple.full_screen_mode }}">
+	<meta name="apple-mobile-web-app-status-bar-style" content="{{ page.meta.apple.bar_style }}">
+	<meta name="apple-mobile-web-app-title" content="{{ page.meta.apple.app_title }}">
+		{%- elsif site.meta.apple.apple_bar_style -%}
+	<meta name="apple-mobile-web-app-capable" content="{{ site.meta.apple.full_screen_mode }}">
+	<meta name="apple-mobile-web-app-status-bar-style" content="{{ site.meta.apple.bar_style }}">
+	<meta name="apple-mobile-web-app-title" content="{{ site.meta.apple.app_title }}">
+	{%- endif -%}
+	{%- comment -%} MS {% endcomment %}
+	<meta name="msapplication-config" content="{{ env }}{{ site.meta.msapplication.config }}browserconfig.xml?v={{ randomNumber }}">
+	<meta name="msapplication-navbutton-color" content="{{ site.meta.msapplication.navbutton-color }}">
+	<meta name="msapplication-square310x310logo" content="{{ env }}{{ site.meta.iconURL }}{{ site.meta.msapplication.square310x310logo }}?v={{ randomNumber }}">
+	<meta name="msapplication-TileColor" content="{{ site.meta.msapplication.TileColor }}">
+	<meta name="msapplication-TileImage" content="{{ env }}{{ site.meta.iconURL }}mstile-310x310.png?v={{ randomNumber }}">
+	<meta name="msapplication-window" content="{{ site.meta.msapplication.window }}">
+	<meta name="msapplication-navbutton-color" content="{{ site.meta.msapplication.theme_color }}">
+	<meta name="msapplication-tap-highlight" content="no">
+	<meta name="format-detection" content="telephone=yes">
+	<title>{{ var_title }}</title>
+	<link rel="mask-icon" href="{{ env }}{{ site.meta.iconURL }}safari-pinned-tab.svg" color="{{ site.meta.apple.pinned_tab_active_color }}">
+	<link rel="apple-touch-icon" sizes="180x180" href="{{ env }}{{ site.meta.iconURL }}apple-touch-icon-180x180.png?v={{ randomNumber }}">
+	<link rel="apple-touch-icon" sizes="152x152" href="{{ env }}{{ site.meta.iconURL }}apple-touch-icon-152x152.png?v={{ randomNumber }}">
+	<link rel="apple-touch-icon" sizes="144x144" href="{{ env }}{{ site.meta.iconURL }}apple-touch-icon-144x144.png?v={{ randomNumber }}">
+	<link rel="apple-touch-icon" sizes="120x120" href="{{ env }}{{ site.meta.iconURL }}apple-touch-icon-120x120.png?v={{ randomNumber }}">
+	<link rel="apple-touch-icon" sizes="114x114" href="{{ site.meta.iconURL }}apple-touch-icon-114x114.png?v={{ randomNumber }}">
+	<link rel="apple-touch-icon" sizes="76x76" href="{{ env }}{{ site.meta.iconURL }}apple-touch-icon-76x76.png?v={{ randomNumber }}">
+	<link rel="apple-touch-icon" sizes="72x72" href="{{ env }}{{ site.meta.iconURL }}apple-touch-icon-72x72.png?v={{ randomNumber }}">
+	<link rel="apple-touch-icon" sizes="60x60" href="{{ env }}{{ site.meta.iconURL }}apple-touch-icon-60x60.png?v={{ randomNumber }}">
+	<link rel="apple-touch-icon" sizes="57x57" href="{{ env }}{{ site.meta.iconURL }}apple-touch-icon-57x57.png?v={{ randomNumber }}">
+	<link rel="icon" type="image/png" href="{{ env }}{{ site.meta.iconURL }}android-chrome-192x192.png?v={{ randomNumber }}" sizes="192x192">
+	<link rel="icon" type="image/png" href="{{ env }}{{ site.meta.iconURL }}favicon-32x32.png?v={{ randomNumber }}" sizes="32x32">
+	<link rel="icon" type="image/png" href="{{ env }}{{ site.meta.iconURL }}favicon-16x16.png?v={{ randomNumber }}" sizes="16x16">
+	<link rel="manifest" href="{{ env }}{{ site.meta.iconURL }}manifest.json?v={{ randomNumber }}">
+	<link rel="shortcut icon" href="{{ env }}{{ site.meta.iconURL }}favicon.ico?v={{ randomNumber }}">
+	<link rel="stylesheet" href="{{ env }}/css/main.css?v={{ randomNumber }}">
+<script>var PinnedExperience = {}; PinnedExperience.env={}; PinnedExperience.env.fe ='{{ env }}'; PinnedExperience.env.API='{{ envAPI }}';</script>

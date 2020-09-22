@@ -1,0 +1,75 @@
+// ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+// ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+// ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+// ▒ Grid - Used across many layouts
+// ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+
+.grid {
+  position: relative;
+  display: grid;
+  max-width: #{ map_get($media-rules, desktop-width-max)};
+  margin: 0 auto;
+  margin-bottom: 32px;
+  align-items: flex-start;
+  grid-gap: 32px;
+
+  @include mobile {
+	margin-bottom: 16px;
+	grid-gap: 16px;
+  }
+
+  // ▒ Start --12
+  // ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+  &--12 {
+
+	grid-template-columns: repeat(12, [col-start] minmax(0, #{ map_get($media-rules, desktop-width-max)}));
+
+
+	// ▒ Start to flavor some of the common grid elements used on the many grid layouts (e.g. grid--7)
+	// ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+
+	/*  gives a bit a styling for all elements that fall within the grid that haven't gotten any attention  */
+	&.grid > * {
+	  //background: #fcf4ec; // Remove this, only for demo purposes
+	  word-wrap: break-word;
+	}
+
+	.grid__12 {
+	  grid-column: col-start / -1;
+	}
+
+	.grid__6 {
+	  grid-column: span 6;
+	}
+
+	.grid__4 {
+	  grid-column: span 4;
+	}
+
+	.grid__3 {
+	  grid-column: span 3;
+	  @include mobile {
+		grid-column: span 6;
+	  }
+	}
+
+	.grid__2 {
+	  grid-column: span 2;
+	  @include mobile {
+		grid-column: span 4;
+	  }
+	}
+
+	.grid__1 {
+	  grid-column: span 1;
+	  @include mobile {
+		grid-column: span 2;
+	  }
+	}
+
+	// ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+	// ▒ End --12
+  }
+
+}
+

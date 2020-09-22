@@ -1,0 +1,205 @@
+# Current GitHub Jekyll version support = 3.8.5
+# This is the global configuration file for PinnedExperience_2020.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+
+repository: vincentvtoscano/PinnedExperience_2020.git
+
+# ▒ Locations [begin]
+# ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+source:           .
+destination:      build
+plugins_dir:      _plugins
+layouts_dir:      _layouts
+data_dir:         _data
+includes_dir:     _layoutPartials
+collections_dir:  _collections # New feature for Jekyll 3.7.0, now all collections are stored in this directory to cleanup the src directory
+collections:
+  legal:
+    output: true # render a page for each document
+    permalink: /legal/:path/
+
+sass:
+    sass_dir: _scssPartials
+    style: compressed
+# ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+# ▒ Locations [end]
+
+# ▒ Handling & Reading [begin]
+# ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+safe:         false
+include:      [".htaccess"]
+exclude:      ["README.md","node_modules", "vendor/bundle/", "vendor/cache/", "vendor/gems/", "vendor/ruby/","Gem*","_ruby_vendor","_cmds"]
+keep_files:   [".git", ".svn"]
+encoding:     "utf-8"
+#markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+# ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+# ▒ Handling & Reading [end]
+
+# ▒ Filtering Content [begin]
+# ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+show_drafts: null
+limit_posts: 0
+future:      false
+unpublished: false
+# ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+# ▒ Filtering Content [end]
+
+# ▒ Plugins [begin]
+# ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+whitelist: []
+# https://marktrapp.com/projects/jekyll-collapse-newlines/
+#plugins: ['jekyll/itafroma/collapse_newlines']
+# ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+# ▒ Plugins [end]
+
+# ▒ Conversion [begin]
+# ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+markdown:    kramdown
+highlighter: rouge
+lsi:         false
+excerpt_separator: "\n\n"
+incremental: false
+# ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+# ▒ Conversion [end]
+
+# ▒ Serving [begin]
+# ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+detach:  false
+port:    4000
+host:    127.0.0.1
+baseurl: "" # does not include hostname
+show_dir_listing: false
+# ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+# ▒ Serving [end]
+
+# ▒ Outputting [begin]
+# ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+#permalink:     date
+paginate_path: /page:num
+timezone: America/Los_Angeles # "Pacific Time (US & Canada)" => "America/Los_Angeles"
+quiet:    false
+verbose:  true
+# ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+# ▒ Outputting [end]
+
+# ▒ Global/Site-level Variables [begin]
+# ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+url: &default_url //vincentvtoscano.github.io/PinnedExperience_2020
+urlStage: https://vincentvtoscano.github.io/PinnedExperience_2020
+urlDev: http://127.0.0.1:4000
+urlAPI: NA
+urlStageAPI: NA
+urlDevAPI: http://127.0.0.1:3000
+name: &default_name Pinned Experience
+title: &default_title Pinned Experience
+author: &default_author Vincent V. Toscano, http://vflux.biz
+editor: &default_editor Vincent V. Toscano
+email: contact@mywebite.biz
+description: &default_description >-
+  Pinned Experience description here.
+meta:
+  title: *default_title
+  description: *default_description
+  keywords: &default_keywords Pinned Experience, Pinned Experience
+  author: *default_author
+  editor: *default_editor
+  publisher: *default_author
+  theme_color: &default_theme_color "#1C3A13"
+  baseURL: &default_baseURL https://clientsitehere.com
+  app_name: &default_app_name Pinned Experience # Should not be adjusted per page - Windows 7: "[D]efines the name of the Pinned site application instance.
+  robots: noindex,nofollow # noindex,nofollow or index,follow
+  iconURL: &default_iconURL /assets/imgs/global/ # pinned sites customizations
+  configURL: *default_iconURL # pinned sites customizations (such as tile background, badge updates and notifications)
+  urlFonts: /assets/fonts/
+  og: # Open Graph Stories
+    id: 12398123-98234 # Open Graph or Facebook App ID
+    locale: en_US
+    url: *default_url
+    title: *default_title
+    description: *default_description
+    site_name: *default_title
+    type: website # ▒▒▒▒▒▒ website article book ▒▒▒▒▒▒ https://developers.facebook.com/docs/reference/opengraph#object-type
+    image: /assets/imgs/share/Seed_share_8K_UHD_20200921.png
+    image_type: image/png
+    image_width: 7680
+    image_height: 4320
+    image_alt: *default_description
+    updated_time: 2020-09-09 # https://en.wikipedia.org/wiki/ISO_8601
+  twitter:  #https://dev.twitter.com/cards/types/summary-large-image
+    card: summary_large_image #Uses a large image, unlike plain summary
+    site: &twitter_username "@usernameNeeded" # @username for the website used in the card footer. [without the @]
+    creator: *twitter_username # @username for the content creator / author.
+    title: *default_title #A concise title for the related content
+    description: *default_description #A description that concisely summarizes the content as appropriate for presentation within a Tweet. You should not re-use the title as the description or use this field to describe the general services provided by the website.
+    image: /assets/imgs/global/android-chrome-512x512.png #be at least 280px in width, and at least 150px in height. Image must be less than 1MB in size
+    image_alt: *default_description
+  apple:
+    full_screen_mode: yes # Sets whether a web application runs in full-screen mode.
+    bar_style: black #Pushes content down and does not obstruct header content as black-translucent
+    app_title: *default_title #Sets the title of the application when added to the homescreen on iOS6+
+    pinned_tab_active_color: *default_theme_color
+  android:
+    manifest: *default_iconURL
+  msapplication:
+    navbutton-color: *default_theme_color # Back and Forward buttons in the Pinned Site browser window
+    square310x310logo: /assets/imgs/global/mstile-310x310.png # Specifies the image to use as the large tile, which is 310x310 pixels at 100% scaling.
+    TileColor: "#ffffff" # define the background color of a tile in Pinned Sites in Windows 8
+    TileImage: /assets/imgs/global/ # path to an image to be used as background for a tile in Pinned Sites in Windows 8. Tile images must be square PNGs 310px by 310px
+    window: width=1920;height=1080
+    starturl: *default_url
+    tooltip: *default_title # tooltip text that appears when you hover over the Pinned Site shortcut in the Windows Start menu or on the desktop
+    config: *default_iconURL # defines the path to a browser configuration (browserconfig.xml) file, letting you set pinned sites customizations (such as tile background, badge updates and notifications) with this external XML file rather than metadata within the HTML markup of webpages.
+# ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+# ▒ Global Variables [end]
+
+# ▒ Page-level Variables [begin]
+# ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+defaults:
+  - scope:
+      path: "" # an empty string here means all files in the project; a wildcard
+    values:
+      theme-color: 153CDB
+  -
+    scope:
+      path: ""
+      type: "legal" # a collection in your site
+    values:
+      layout: "legal01"
+  -
+    scope:
+      path: "404.md"
+    values:
+      layout: "http-status-codes01"
+# ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+# ▒ Page-level Variables [end]
+
+# ▒ Templating [begin]
+# ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+liquid:
+  error_mode: warn
+# ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+# ▒ Templating [end]
+
+# ▒ Markdown Processors [begin]
+# ▒ Kramdown CLI full set of options: https://kramdown.gettalong.org/options.html
+# ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+rdiscount:
+  extensions: []
+
+redcarpet:
+  extensions: []
+
+kramdown:
+  input:          GFM
+  auto_ids:       true
+  footnote_nr:    1
+  entity_output:  as_char
+  toc_levels:     1..6
+  smart_quotes:   [lsquo,rsquo,ldquo,rdquo]
+  hard_wrap:      false
+  parse_block_html: true
+#  coderay_css:    class
+# ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+# ▒ Markdown Processors [end]

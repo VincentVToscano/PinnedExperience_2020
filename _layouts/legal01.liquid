@@ -1,0 +1,27 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en" id="{{ site.name | downcase }}-html">
+    <head>
+        {% include head01.liquid collection='legal' %}
+    </head>
+    <body>
+        {% include navigation/navGlobal.liquid %}
+        <main class="mainContent">
+
+            <div class="legal legal--style01">
+
+                <header class="legal__header">
+
+                    <h1 class="legal__h1">{{ page.headline }}</h1>
+                    <h2 class="legal__h2">{{ page.subheadline }}</h2>
+
+                </header>
+
+                {{ content }}
+
+            </div>
+        </main>
+        {% include footer01.liquid %}
+    </body>
+</html>

@@ -1,0 +1,71 @@
+// ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+// ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+// ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+// ▒ Global Navigation
+// ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+.navGlobal{
+  position: fixed;
+  z-index: 99999;
+  top:0;
+  left: 0;
+  width: 100%;
+  //background: $color-pink-1;
+}
+
+.navGlobal__nav{
+  //background: $color-bkgd;
+  position: relative;
+  @include flex(0 0 auto);
+
+  &--desktop{
+	height: $global-nav-height-desktop;
+	@include mobile {
+	  display: none;
+	}
+  }
+
+  &--mobileTablet{
+	height: $global-nav-height-mobile;
+	@include desktop {
+	  display: none;
+	}
+	@include desktop-xl {
+	  display: none;
+	}
+  }
+}
+
+.navGlobal__button {
+  position: relative;
+  display:inline-block;
+  width:auto;
+  height:auto;
+  margin: 0;
+  padding:0 20px;
+  border:0;
+  outline:none;
+  background:rgba(0,0,0,0);
+  line-height:$global-nav-height-desktop;
+  color:$color-gray-1;
+  overflow:hidden;
+  cursor:pointer;
+  text-align:center;
+  white-space:nowrap;
+  text-decoration:none;
+  text-transform:uppercase;
+  @include user-select();
+  text-overflow:ellipsis;
+
+  &.button--full-width {
+    display:block;
+  }
+
+  @include setPseudoClasses(rgba(0,0,0,0), $color-gray-1, rgba(255,255,255,1), $color-gray-3, .3s);
+
+  @include mobile{
+    line-height:$global-nav-height-mobile;
+  }
+  @include tablet{
+    line-height:$global-nav-height-mobile;
+  }
+}

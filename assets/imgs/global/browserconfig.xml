@@ -1,0 +1,15 @@
+---
+---
+{%- include varsGlobal.liquid -%}
+<?xml version="1.0" encoding="utf-8"?>
+<browserconfig>
+    <msapplication>
+        <tile>
+            <square70x70logo src="{{ env }}{{ site.meta.iconURL }}mstile-70x70.png?v={{ randomNumber }}"/>
+            <square150x150logo src="{{ env }}{{ site.meta.iconURL }}mstile-150x150.png?v={{ randomNumber }}"/>
+            <square310x310logo src="{{ env }}{{ site.meta.iconURL }}mstile-310x310.png?v={{ randomNumber }}"/>
+            <wide310x150logo src="{{ env }}{{ site.meta.iconURL }}mstile-310x150.png?v={{ randomNumber }}"/>
+            <TileColor>#ffffff</TileColor>
+        </tile>
+    </msapplication>
+</browserconfig>

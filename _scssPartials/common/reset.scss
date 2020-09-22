@@ -1,0 +1,183 @@
+/**
+ * @author:     Vincent V. Toscano
+ * @version:    3.8
+ * @date:       9/01/12
+ * @time:       1:59 PM
+ * @updated:    8/20/20
+ * reset --- CSS3 reset template.
+ */
+// ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+// ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+// ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+// ▒ Reset
+// ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+
+@charset "UTF-8";
+::after, ::before, a,abbr,acronym,address,applet,area,article,aside,audio,b,base,basefont,bdo,big,blockquote,body,br,button,canvas,caption,center,cite,code,col,colgroup,datalist,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,font,footer,form,frame,frameset,h1,h2,h3,h4,h5,h6,head,header,hgroup,hr,html,i,iframe,img,input,ins,kbd,keygen,label,legend,li,link,map,mark,math,menu,meta,meter,nav,nobr,noembed,noframes,noscript,object,ol,optgroup,option,output,p,param,picture,pre,progress,q,rp,rt,ruby,s,samp,script,section,select,small,source,span,strike,strong,style,sub,summary,sup,svg,table,tbody,td,textarea,tfoot,th,thead,time,title,tr,tt,u,ul,var,video,wbr {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  outline: 0;
+  background: transparent;
+  font-family: inherit;
+  font-size: 100%;
+  font-weight: inherit;
+  font-style: inherit;
+  color: inherit;
+  -moz-opacity: inherit;
+  -ms-opacity: inherit;
+  -o-opacity: inherit;
+  -webkit-opacity: inherit;
+  opacity: inherit;
+  vertical-align: baseline;
+  pointer-events: inherit;
+}
+
+:focus {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+}
+
+
+
+html, body {
+  font: normal normal normal 10pt/normal "Helvetica Neue", Roboto, Arial, Helvetica, sans-serif;
+  color: #9e9e9e;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+p, span, div, * {
+  cursor: default;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+a img, textarea {
+  border: 0 none;
+  outline: none;
+  background: transparent;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+a:link {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+a:visited {
+}
+
+a:hover {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+a:active {
+}
+
+h1, h2, h3, h4, h5, h6 {
+  display: block;
+}
+
+input[type="button"] {
+  width: 100px;
+}
+
+ol, ul {
+  //list-style: none;
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+caption, th, td {
+  font-weight: normal;
+  text-align: left;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+}
+
+article, aside, button, details, figcaption, figure, footer, header, menu, nav, section, summary {
+  display: block;
+}
+
+//  Expected box layout model to all elements
+// ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+//  Inputs and buttons
+// ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+button {
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  line-height: normal;
+  color: inherit;
+  overflow: visible;
+  cursor: pointer;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none; /* for button */
+  user-select: none;
+  -webkit-appearance: button; /* for input */
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+//  Remove clear and reveal password icons from >= IE10
+// ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+input::-ms-clear, input::-ms-reveal {
+  display: none;
+}
+
+//  Add in default styles for subscripted copy
+// ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+sub, sup {
+  font-size: 75%; /* Specified in % so that the sup/sup is the correct size relative to the surrounding copy */
+  line-height: 0; /* Zero out the line-height so that it doesn't interfere with the positioning that follows */
+  position: relative; /* Makes all browsers position the sup/sup properly, relative to the surrounding copy */
+  vertical-align: baseline;
+}
+
+sup {
+  /* Move the superscripted copy up */
+  top: -0.5em;
+}
+
+sub {
+  /* Move the subscripted copy down, but only
+     half as far down as the superscript moved up */
+  bottom: -0.25em;
+}

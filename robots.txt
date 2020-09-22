@@ -1,0 +1,32 @@
+---
+---
+{%- include varsGlobal.liquid -%}
+{%- if jekyll.environment == "prod" -%}
+Sitemap: {{env}}/sitemap.xml
+User-agent: *
+# Directories
+Disallow: /http-status-codes/
+Disallow: /templates/
+Disallow: /templatesDisabled/
+Disallow: /templatesProcessed/
+Disallow: /templatesScript/
+Disallow: /testPages/
+# Files
+Disallow: /404.html
+Disallow: /feed.xml
+# Paths (Dirty URLs)
+Disallow: /?q=admin/
+Disallow: /?q=comment/reply/
+Disallow: /?q=content/
+Disallow: /?q=file/
+Disallow: /?q=filter/tips/
+Disallow: /?q=node/
+Disallow: /?q=search/
+Disallow: /?q=user/password/
+Disallow: /?q=user/register/
+Disallow: /?q=user/login/
+Disallow: /?q=user/logout/
+{%- else -%}
+User-agent: *
+Disallow: /
+{%- endif -%}

@@ -1,0 +1,44 @@
+{%- comment -%}
+	Dynamic banner plus global navigation
+	▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+{%- endcomment -%}
+<div class="navGlobal">
+	{%- include banner/banner01.liquid -%}
+
+	{%- comment -%}
+		Start the desktop & desktop-xl nav
+		▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+	{%- endcomment -%}
+	<nav id="nav_desktop_click-enabled" class="navGlobal__nav navGlobal__nav--desktop">
+		<a href="{{env}}" class="navGlobal__button">Home</a>
+		{%- comment -%}
+		<a href="{{env}}/404" class="navGlobal__button">404</a>
+		{%- for page in site.legal -%}
+			<a href="{{env}}{{page.url}}" class="navGlobal__button">{{page.title}}</a>
+		{%- endfor -%}
+		</ul>
+			<a href="#{{ site.name  | downcase }}-footer" class="navGlobal__button">Footer Btn Test</a>
+		{%- endcomment -%}
+	</nav>
+
+
+	{%- comment -%}
+		Start the mobile & tablet nav
+		▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+
+	{%- endcomment -%}
+	<nav id="nav_mobile_tablet_touch-enabled" class="navGlobal__nav navGlobal__nav--mobileTablet">
+		<a href="{{env}}" class="navGlobal__button">Home</a>
+		<a href="{{env}}/fonts.html" class="navGlobal__button">Fonts</a>
+		{%- comment -%}
+			<a href="{{env}}/404" class="navGlobal__button">404</a>
+			{%- for page in site.legal -%}
+				<a href="{{env}}{{page.url}}" class="navGlobal__button">{{page.title}}</a>
+			{%- endfor -%}
+			</ul>
+			<a href="#{{ site.name  | downcase }}-footer" class="navGlobal__button">Footer Btn Test</a>
+		{%- endcomment -%}
+	</nav>
+</div>
+
+
