@@ -72,6 +72,7 @@ PinnedExperience.init = function () {
 	mobileNav	= _id('nav_mobile_tablet_touch-enabled');
 
 	PinnedExperience.addHandlers();
+	PinnedExperience.enactPinning();
 };
 
 /**
@@ -80,4 +81,67 @@ PinnedExperience.init = function () {
 PinnedExperience.addHandlers = function () {
 	// _log('addHandlers');
 	// PinnedExperience.nav.addHandlers();
+};
+
+/**
+ * addHandlers --- Add application event handlers.
+ */
+PinnedExperience.enactPinning = function () {
+	// _log('enactPinning');
+	gsap.registerPlugin(ScrollTrigger);
+
+	/*var numbers = gsap.utils.toArray(".home__section").forEach(function(elem) {
+		var num = elem.querySelector(".home__lens");
+
+		ScrollTrigger.create({
+			trigger: elem,
+			start: "center center-=25%",
+			end: "center center+=25%",
+			pin: num,
+			toggleClass: {targets: num, className: "green"},
+			markers: true
+		}).home .home__section:nth-of-type(10n+1)
+		'[data-sec="2"]'
+	});*/
+
+	gsap.to("#lens1_lens",{
+		x:"+=25",
+		duration:12,
+		scrollTrigger: {
+			trigger:"#section2_sec",
+			//4 distinct toggle places - onEnter, onLeave, onEnterBack, and onLeaveBack
+			//"play", "pause", "resume", "reset", "restart", "complete", "reverse", and "none"
+			toggleActions: "none pause reverse pause",
+			//"top center" means "when the top of the trigger hits the center of the scroller"
+			// (and the scroller is the viewport by default)
+			start: "top top+=75%",
+			//So, for example, "bottom center" means "when the bottom of the endTrigger hits the center
+			// of the scroller". "center 100px" means "when the center of the endTrigger hits 80% down
+			// from the top of the scroller" (assuming vertical scroll).
+			// You can use keywords like "top", "bottom", "center"
+			end: "bottom bottom",
+			// stop: "bottom top",
+			scrub: true,
+			markers:true
+		}
+	});
+
+	gsap.to("#lens1_lens",{
+		x:"+=25",
+		duration:2,
+		scrollTrigger: {
+			trigger:"#section3_sec",
+			//4 distinct toggle places - onEnter, onLeave, onEnterBack, and onLeaveBack
+			//"play", "pause", "resume", "reset", "restart", "complete", "reverse", and "none"
+			toggleActions: "none pause reverse pause",
+			//"top center" means "when the top of the trigger hits the center of the scroller"
+			// (and the scroller is the viewport by default)
+			start: "top top+=75%",
+			// stop: "bottom top",
+			scrub: true,
+			end: "bottom bottom",
+			markers:true
+		}
+	});
+
 };
