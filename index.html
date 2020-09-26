@@ -2,6 +2,12 @@
 title: &title Home
 headline: Home
 subheadline: H2 subheadline
+elements:
+- earth
+- water
+- fire
+- air
+- void
 ---
 <!DOCTYPE html>
 <html lang="en" id="{{ site.name | downcase | replace: " " , "-" }}-html">
@@ -11,12 +17,11 @@ subheadline: H2 subheadline
 	<body>
 		{% include navigation/navGlobal.liquid %}
 		<main class="mainContent home">
-			<section id="section1_sec" class="home__section" data-sec="1">
+			{% for element in page.elements %}
+			<section id="section{{ forloop.index }}_sec" class="home__section" data-sec="{{ forloop.index }}">
+				<img style="width:100%; height:100vh; object-fit: cover;" src="{{ env }}/assets/imgs/home/PinnedExperience_{{ element }}-1920x1080-50.jpg">
 			</section>
-			<section id="section2_sec" class="home__section" data-sec="2">
-			</section>
-			<section id="section3_sec" class="home__section" data-sec="2">
-			</section>
+			{% endfor %}
 			<div id="lens1_lens" class="home__lens"></div>
 
 		</main>

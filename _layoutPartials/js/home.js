@@ -128,7 +128,7 @@ PinnedExperience.enactPinning = function () {
 
 	gsap.to("#lens1_lens",{
 		immediateRender: false,
-		x:"-=345",
+		x:"-=500",
 		duration:2,
 		scrollTrigger: {
 			trigger:"#section3_sec",

@@ -17,7 +17,7 @@
 		{% endfor %}
 	</ul>
 
-	<a href="#{{ site.name | downcase }}-html" class="footer__to-top-button"></a>
+	<a href="#{{ site.name | downcase | replace: " " , "-" }}-html" class="footer__to-top-button"></a>
 </footer>
 <script src="{{ env }}/js/main.js?v={{ randomNumber }}"></script>
 <script>window.onload = PinnedExperience.init;</script>
