@@ -1,7 +1,7 @@
 {% capture time_now %}{{'now' }}{% endcapture %}
 {% capture present_year %}{{ 'now' | date: "%Y" }}{% endcapture %}
 {% capture start_year %}{{2020}}{% endcapture %}
-<footer id="{{ site.name | downcase }}-footer" class="footer">
+<footer id="{{ site.name | downcase | replace: " " , "-" }}-footer" class="footer">
 	<p class="footer__p">
 		©{% if present_year > start_year %}<time itemprop="copyright" datetime="{{ '2020-01-01' | date_to_xmlschema }}">2020</time> -{% endif %}
 		<time itemprop="copyright" datetime="{{ time_now | date_to_xmlschema }}">{{ time_now | date: "%Y" }}</time>

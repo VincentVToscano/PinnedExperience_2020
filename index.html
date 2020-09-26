@@ -4,7 +4,7 @@ headline: Home
 subheadline: H2 subheadline
 ---
 <!DOCTYPE html>
-<html lang="en" id="{{ site.name | downcase }}-html">
+<html lang="en" id="{{ site.name | downcase | replace: " " , "-" }}-html">
 	<head>
 		{% include head01.liquid %}
 	</head>

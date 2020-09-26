@@ -105,7 +105,7 @@ PinnedExperience.enactPinning = function () {
 	});*/
 
 	gsap.to("#lens1_lens",{
-		x:"+=25",
+		x:"+=225",
 		duration:12,
 		scrollTrigger: {
 			trigger:"#section2_sec",
@@ -127,7 +127,8 @@ PinnedExperience.enactPinning = function () {
 	});
 
 	gsap.to("#lens1_lens",{
-		x:"+=25",
+		immediateRender: false,
+		x:"-=345",
 		duration:2,
 		scrollTrigger: {
 			trigger:"#section3_sec",
